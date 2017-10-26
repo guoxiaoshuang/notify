@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任务</title>
+    <link rel="stylesheet" type="text/css" href="notify.css">
+    </head>
+<body>  
+        <div id="qwe">
+            <center><button>收到</button></center> 
+        </div>  
+<script src="notify.js">
+</script>
+     <script>
+     const notify = new Notify({
+     title: '最新通知', content: 'notify预览版发notify预览版发布notify预览版发notify预览版发notify预览版发'
+     })
+
+     notify.show({
+     autoHide: true,
+     timeout:10000
+     })
+     function appearance(){
+     var div = document.getElementById("qwe");
+     div.style.display="block";
+     }  
+     window.clearTimeout(time1);
+     var time1 = window.setTimeout("appearance()",7000);
+    </script>
+   
+    </body>
+    </html>

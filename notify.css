@@ -1,16 +1,40 @@
 .notify-container {
   width: 300px;
   height: 100px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  position: fixed;
+  background:yellow;
+  transition:width 2s,height 2s;
+  border: 2px solid rgb(0, 255, 234);
+  border-radius: 6px;
   top: 10px;
   right: 5px;
-  /* display: none; */
+  margin:0 auto;
+  position:relative;/*相对原始位置进行移动 */
+  animation:yidong 5s;/*规定动画的名称与时长 */
+}
+@keyframes yidong/* 规定动画,0%开始，100%结束*/
+{
+ 0%   {background:red; left:0px; top:0px;}
+ 25%  {background:yellow; left:200px; top:0px;}
+ 50%  {background:blue; left:200px; top:200px;}
+ 75%  {background:green; left:0px; top:200px;}
+ 100% {background:red; left:0px; top:0px;}
 }
 .notify-title {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid rgb(0, 204, 255);
+  border-bottom-color: red;
+  margin: auto;
+  text-align: center;
 }
 .notify-content {
   padding-left: 5px;
+  text-indent: 2em; 
+}
+#qwe{
+  display:none;
+}
+
+.close{
+  float: right;
+  background-color: yellow;
+    
 }

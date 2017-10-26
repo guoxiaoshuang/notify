@@ -1,32 +1,41 @@
-# notify
-
-## 如何使用
-html中引入notify.js和notify.css
-
-## 参数
-+ `container` 容器节点 默认为document.body
-+ `title` string 标题
-+ `content` string 内容
-
-## 方法
-### show(options)
-+ 描述：notify show
-+ options
-  + `autoHide` boolean true/false notify显示后是否在一段时间后自动隐藏 默认为true
-  + `timeout` number notify显示后经过多久自动隐藏 autoHide为true时生效 默认为1000(ms)
-
-### hide()
-  + 描述: notify hide
-
+# notif
+# 新增功能说明
+## 增加`css3`动画效果
++ 添加 `@keyframes`属性，`position`属性以及`animation`设置动画效果；利用 `background` 设置背景颜色 
++ 产生效果：在规定时间五秒内，相对原始位置进行轨迹为正方形的移动，五秒之后停在原始位置
+## 示例
+```css
+@keyframes yidong/* 规定动画,0%开始，100%结束*/
+{
+ 0%   {background:red; left:0px; top:0px;}
+ 25%  {background:yellow; left:200px; top:0px;}
+ 50%  {background:blue; left:200px; top:200px;}
+ 75%  {background:green; left:0px; top:200px;}
+ 100% {background:red; left:0px; top:0px;}
+}
+```
+## 添加 `button` 关闭按钮
++ 在 `container`中添加一个 `button` 按钮
++ 给 `button` 关闭按钮 `display：block` 使其点击关闭后隐藏
 ## 示例
 ```js
-const notify = new Notify({
-  title: '最新通知',
-  content: 'notify预览版发布'
-})
-
-notify.show({
-  autoHide: true,
-  timeout: 2000
-})
+const template = `<section id="notify-container"                   class="notify-container">
+                 <button  class="close" type="button" 
+                 onclick="document.getElementById('notify-container').style.display='none'">关闭</button>
+                 <h3 class="notify-title"></h3>                      
+                 <article class="notify-content"></article>
+                 </section>` 
+```
+## 添加 `button` 收到按钮
++ 在 `body` 主体中添加一个收到按钮
++ 在`css`中应用 `display:none`属性使其隐藏
++ 在 `<script>` 标签中添加延时与清除函数，延时七秒之后显示按钮
++ 显示按钮，调用函数，点击确定之后隐藏按钮
+```js
+function appearance(){
+     var div = document.getElementById("qwe");
+     div.style.display="block";
+     }  
+     window.clearTimeout(time1);
+     var time1 = window.setTimeout("appearance()",7000);
 ```

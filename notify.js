@@ -1,10 +1,11 @@
 !(() => {
   // html模版
   const template = `<section id="notify-container" class="notify-container">
-                        <h3 class="notify-title"></h3>
-                        <article class="notify-content"></article>
-                      </section>`
-
+                 <button  class="close" type="button" 
+                 onclick="document.getElementById('notify-container').style.display='none'">关闭</button>
+                 <h3 class="notify-title"></h3>                      
+                 <article class="notify-content"></article>
+                 </section>` 
   // Help类，这里作用是一个utils
   class Help {
     // html => node
@@ -78,5 +79,11 @@
   } else {
     window.Notify = Notify
   }
-
+  window.onload=function(){
+    var a = document.getElementById("qwe")
+    a.onclick=function(){
+      qwe.style.display="none";
+      alert("谢谢");
+    }
+  }
 })()
